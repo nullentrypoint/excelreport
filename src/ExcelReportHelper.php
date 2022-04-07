@@ -1,6 +1,6 @@
 <?php
 
-namespace customit\excelreport;
+namespace nullentrypoint\excelreport;
 
 use Yii;
 use SuperClosure\Serializer;

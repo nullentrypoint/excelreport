@@ -1,6 +1,6 @@
 <?php
 
-namespace customit\excelreport;
+namespace nullentrypoint\excelreport;
 
 use Yii;
 use Box\Spout\Common\Exception\IOException;
@@ -14,7 +14,7 @@ use Box\Spout\Writer\Style\Color;
 use yii\base\InvalidConfigException;
 use box\spout;
 use yii\queue\Queue;
-use customit\excelreport\ExcelReportHelper;
+use nullentrypoint\excelreport\ExcelReportHelper;
 
 class ExcelReportModel {
 

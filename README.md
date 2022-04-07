@@ -41,10 +41,11 @@ Configuration
 Before using the module, configure the [queues](https://github.com/yiisoft/yii2-queue/blob/master/docs/guide/README.md)
 
 Add progress behavior to Queue configuration:
+
 ```php
 'queue' => [
     // ... you Queue configuration ...
-    'as progress' => \customit\excelreport\ProgressBehavior::class,
+    'as progress' => \nullentrypoint\excelreport\ProgressBehavior::class,
 ],
 ```
 
@@ -64,7 +65,7 @@ $gridColumns = [
 ];
 
 // Render widget
-echo \customit\excelreport\ExcelReport::widget([
+echo \nullentrypoint\excelreport\ExcelReport::widget([
     'columns' => $gridColumns,
     'dataProvider' => $dataProvider,
 ]);

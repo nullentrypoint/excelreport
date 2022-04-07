@@ -1,6 +1,6 @@
 <?php
 
-namespace customit\excelreport\controllers;
+namespace nullentrypoint\excelreport\controllers;
 
 use Yii;
 use yii\web\Controller;
@@ -31,7 +31,9 @@ class ReportController extends Controller {
                     return false;
                 } else {
                     Yii::$app->session->remove('excel-report-progress');
-                    ob_clean();
+                    if(ob_get_length() > 0) {
+                        ob_clean();
+                    }
                     return \Yii::$app->response->sendFile($file, null, ['mimeType' => 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet']);
                 }
             } else {

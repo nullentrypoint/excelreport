@@ -7,7 +7,7 @@
  * @version   0.0.1
  */
 
-namespace customit\excelreport;
+namespace nullentrypoint\excelreport;
 
 class Module extends \yii\base\Module
 {

@@ -1,5 +1,5 @@
 {
-    "name": "custom-it/yii2-excel-report",
+    "name": "nullentrypoint/yii2-excel-report",
     "description": "An extension for generate excel file from GridView content",
     "type": "yii2-extension",
     "keywords": ["yii2","extension","excel","report","excelreport"],
@@ -18,10 +18,10 @@
     },
     "autoload": {
         "psr-4": {
-            "customit\\excelreport\\": "src"
+            "nullentrypoint\\excelreport\\": "src"
         }
     },
     "extra": {
-        "bootstrap": "customit\\excelreport\\Bootstrap"
+        "bootstrap": "nullentrypoint\\excelreport\\Bootstrap"
     }
 }
