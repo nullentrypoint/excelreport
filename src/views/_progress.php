@@ -7,16 +7,17 @@ echo Html::hiddenInput('queueId', $queueId, ['id' => 'queueId']);
 ?>
 
 <div class="progress">
-    <div id="reportProgress" class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="min-width: 2em;">
+    <div id="reportProgress" class="progress-bar progress-bar-striped bg-info active" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="min-width: 2em;">
         0%
     </div>
 </div>
+<p id="progressInfo"></p>
 
 <div id="progress-file" style="display: none;">
-    <a href="/excelreport/report/download" target="_blank"><?= Yii::t('customit','Download last report') ?></a>
+    <a href="/excelreport/report/download" target="_blank" class="btn btn-success"><?= Yii::t('customit','Download last report') ?></a>
 </div>
 <div id="reset-progress">
-    <a id="reset-progress-link" href="#"><?= Yii::t('customit','Stop generation') ?></a>
+    <a id="reset-progress-link" href="#" class="btn btn-danger"><?= Yii::t('customit','Stop generation') ?></a>
 </div>
 
 <script>
@@ -26,6 +27,9 @@ echo Html::hiddenInput('queueId', $queueId, ['id' => 'queueId']);
             var $percent = data['progress'][0] * 100 / data['progress'][1];
             $('#reportProgress').css('width', $percent+'%').attr('aria-valuenow', $percent);
             $('#reportProgress').html(Math.floor($percent)+'%');
+            if(data['progress'][0] > 1) {
+                $('#progressInfo').html(data['progress'][0] + ' / ' + data['progress'][1]);
+            }
             if (data['progress'][0] == data['progress'][1]) {
                 clearInterval(timerId);
                 $('#reset-progress').hide();
